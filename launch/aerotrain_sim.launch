@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- these are the arguments you can pass this launch file, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="true"/>
+  <arg name="world" default="$(find summer_school_haptic_sim)/worlds/tutorial.world"/>
+  <arg name="sdf" default="$(find summer_school_haptic_sim)/models/aerotrain/aerotrain.sdf"/>
+  <arg name="vehicle" default="aerotrain"/>
+  <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
+  <arg name="interactive" default="true"/>
+  <arg name="respawn_mavros" default="false"/>
+
+  <arg name="enable_mavros" default="true"/>
+
+  <!-- start gazebo server-->
+  <include file="$(find px4)/launch/posix_sitl.launch">
+    <arg name="world" value="$(arg world)" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="verbose" value="$(arg verbose)" />
+    <arg name="sdf" value="$(arg sdf)" />
+    <arg name="vehicle" value="$(arg vehicle)" />
+    <arg name="interactive" value="$(arg interactive)" />
+  </include>
+
+  <!-- MAVROS -->
+  <group if="$(arg enable_mavros)">
+    <include file="$(find mavros)/launch/px4.launch">
+        <!-- GCS link is provided by SITL -->
+        <arg name="gcs_url" value=""/>
+        <arg name="fcu_url" value="$(arg fcu_url)"/>
+        <arg name="respawn_mavros" value="$(arg respawn_mavros)"/>
+    </include>
+  </group>
+
+<node name="aerotrain_controller" pkg="summer_school_haptic_sim" type="gz2ros_node" output="screen" />
+
+</launch>
