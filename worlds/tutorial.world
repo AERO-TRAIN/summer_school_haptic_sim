@@ -88,10 +88,10 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>144 133000000</sim_time>
-      <real_time>144 439204463</real_time>
-      <wall_time>1716972868 643041480</wall_time>
-      <iterations>144133</iterations>
+      <sim_time>317 295000000</sim_time>
+      <real_time>173 651110435</real_time>
+      <wall_time>1717085084 893885766</wall_time>
+      <iterations>173162</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -103,10 +103,20 @@
         </link>
       </model>
       <model name='target'>
-        <pose>4 0 1.25 0 -0 0</pose>
+        <pose>4 0 1.14544 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>4 0 1.25 0 -0 0</pose>
+          <pose>4 0 1.14544 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='target_goal'>
+        <pose>6 0 0.01 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>6 0 0.01 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -116,7 +126,14 @@
         <pose>0 0 10 0 -0 0</pose>
       </light>
     </state>
-    <model name='target'>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-7.00788 -9.51832 5.31048 0 0.242203 0.397834</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='target_goal'>
       <link name='link'>
         <inertial>
           <mass>70523.4</mass>
@@ -134,7 +151,54 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
         <pose>0 0 0 0 -0 0</pose>
-        <gravity>0</gravity>
+        <gravity>1</gravity>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 4 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <ambient>0.87 0.26 0.07</ambient>
+            <diffuse>0.87 0.26 0.07</diffuse>
+            <specular>0.87 0.26 0.07 1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>6 0 1.25 0 -0 0</pose>
+    </model>
+    <model name='target'>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1.7562</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.510765</iyy>
+            <iyz>0</iyz>
+            <izz>1.4121</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
         <visual name='visual'>
           <geometry>
             <box>
@@ -149,8 +213,8 @@
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
             <specular>0.01 0.01 0.01 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
@@ -216,14 +280,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>4 0 1.14544 0 -0 0</pose>
+      <pose>4 0 1.25 0 -0 0</pose>
     </model>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>-8.48022 -20.6174 7.76506 0 0.246758 0.850905</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
   </world>
 </sdf>
