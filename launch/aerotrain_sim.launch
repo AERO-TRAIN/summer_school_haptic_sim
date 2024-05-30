@@ -38,6 +38,6 @@
   </group>
 
 <node name="aerotrain_controller" pkg="summer_school_haptic_sim" type="gz2ros_node" output="screen" />
-<node pkg="summer_school_haptic_sim" name="wrench_estimation" type="wrench_estimation_ros1.py" output="screen">
+<node pkg="summer_school_haptic_sim" name="wrench_estimation" type="wrench_estimation_ros1.py" output="screen" />
 
 </launch>
