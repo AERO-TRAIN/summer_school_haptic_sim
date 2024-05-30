@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 """
 Content: Wrench estimator
 Author: Julien Mellet
