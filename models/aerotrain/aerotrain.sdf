@@ -743,137 +743,6 @@
       <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
     </plugin>
 
-  <link name='camera_1'>
-    <pose>0.15 0 -0.1 0 0 0</pose>
-    <inertial>
-      <pose>0 0 0 0 0 0</pose>
-      <mass>0.015</mass>
-      <inertia>
-        <ixx>1e-05</ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
-        <iyy>1e-05</iyy>
-        <iyz>0</iyz>
-        <izz>1e-05</izz>
-      </inertia>
-    </inertial>
-    <visual name='visual'>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box>
-          <size>0.05 0.05 0.05</size>
-        </box>
-      </geometry>
-    </visual>
-    <sensor name='sensor_camera_1' type='camera'>
-      <camera name='camera_1'>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>1280</width>
-          <height>1080</height>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>100</far>
-        </clip>
-      </camera>
-      <always_on>true</always_on>
-      <update_rate>30</update_rate>
-      <visualize>true</visualize>
-      <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
-        <alwaysOn>1</alwaysOn>
-        <updateRate>0.0</updateRate>
-        <cameraName>camera_1/</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>left_camera_optical_frame</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
-  </link>
-  <joint name="camera_1_joint" type="revolute">
-    <child>camera_1</child>
-    <parent>base_link</parent>
-    <axis>
-      <xyz>0 0 1</xyz>
-      <limit>
-        <upper>0</upper>
-        <lower>0</lower>
-      </limit>
-    </axis>
-  </joint> 
-
-  <link name='camera_2'>
-    <pose>-1.5 0 1 0 0.47 0</pose>
-    <inertial>
-      <pose>0 0 0 0 0 0</pose>
-      <mass>0.015</mass>
-      <inertia>
-        <ixx>1e-05</ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
-        <iyy>1e-05</iyy>
-        <iyz>0</iyz>
-        <izz>1e-05</izz>
-      </inertia>
-    </inertial>
-    <visual name='visual'>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box>
-          <size>0.05 0.05 0.05</size>
-        </box>
-      </geometry>
-    </visual>
-    <sensor name='sensor_camera_2' type='camera'>
-      <camera name='camera_2'>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>1280</width>
-          <height>1080</height>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>100</far>
-        </clip>
-      </camera>
-      <always_on>true</always_on>
-      <update_rate>30</update_rate>
-      <visualize>true</visualize>
-      <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
-        <alwaysOn>1</alwaysOn>
-        <updateRate>0.0</updateRate>
-        <cameraName>camera_2/camera</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>left_camera_optical_frame</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
-  </link>
-
-  <joint name="camera_2_joint" type="revolute">
-    <child>camera_2</child>
-    <parent>base_link</parent>
-    <axis>
-      <xyz>0 0 1</xyz>
-      <limit>
-        <upper>0</upper>
-        <lower>0</lower>
-      </limit>
-    </axis>
-  </joint> 
-
   <link name="link_manipulator">
         <pose>1.5 0 0.3 0 1.39626 0</pose>
         <inertial>
@@ -899,7 +768,7 @@
           <geometry>
             <cylinder>
               <radius>0.0100000</radius>
-              <length>1.5</length>
+              <length>0.75</length>
             </cylinder>
           </geometry>
         </visual>
@@ -935,61 +804,5 @@
           <always_on>1</always_on>
         </sensor>
       </joint>
-
-
-  <link name='camera_pilot'>
-    <pose>-2.5 -4 1 0 -0.174533 0.523599</pose>
-    <inertial>
-      <pose>0 0 0 0 0 0</pose>
-      <mass>0.015</mass>
-      <inertia>
-        <ixx>1e-05</ixx>
-        <ixy>0</ixy>
-        <ixz>0</ixz>
-        <iyy>1e-05</iyy>
-        <iyz>0</iyz>
-        <izz>1e-05</izz>
-      </inertia>
-    </inertial>
-    <visual name='visual'>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box>
-          <size>0.05 0.05 0.05</size>
-        </box>
-      </geometry>
-    </visual>
-    <gravity>0</gravity>
-    <sensor name='sensor_camera_pilot' type='camera'>
-      <camera name='camera_pilot'>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>1280</width>
-          <height>1080</height>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>100</far>
-        </clip>
-      </camera>
-      <always_on>true</always_on>
-      <update_rate>30</update_rate>
-      <visualize>true</visualize>
-      <plugin name='camera_controller' filename='libgazebo_ros_camera.so'>
-        <alwaysOn>1</alwaysOn>
-        <updateRate>0.0</updateRate>
-        <cameraName>camera_pilot/</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>left_camera_optical_frame</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
-  </link>
   </model>
 </sdf>
