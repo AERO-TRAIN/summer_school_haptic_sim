@@ -744,7 +744,7 @@
     </plugin>
 
   <link name="link_manipulator">
-        <pose>0.75 0 0.3 0 1.39626 0</pose>
+        <pose>0.75 0 0.1 0 1.39626 0</pose>
         <inertial>
           <inertia>
             <ixx>0.0100000</ixx>
