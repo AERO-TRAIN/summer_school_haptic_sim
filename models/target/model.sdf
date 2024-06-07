@@ -3,15 +3,15 @@
   <model name='target'>
     <link name='link'>
       <inertial>
-        <mass>9.04236</mass>
-        <inertia>
-          <ixx>15.8802</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>4.61847</iyy>
-          <iyz>0</iyz>
-          <izz>12.7688</izz>
-        </inertia>
+        <mass>0.5</mass>
+            <inertia>
+            <ixx>0.8781</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.2553825</iyy>
+            <iyz>0</iyz>
+            <izz>0.70605</izz>
+            </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
       <self_collide>0</self_collide>
