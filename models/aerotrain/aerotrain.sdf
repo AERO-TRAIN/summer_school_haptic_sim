@@ -875,7 +875,7 @@
   </joint> 
 
   <link name="link_manipulator">
-        <pose>1.5 0 0.3 0 1.39626 0</pose>
+        <pose>0.75 0 0.1 0 1.39626 0</pose>
         <inertial>
           <inertia>
             <ixx>0.0100000</ixx>
@@ -895,11 +895,11 @@
           </geometry>
         </visual>
         <visual name="visual_cylinder">
-          <pose>0 0 -0.75 0 0 0</pose>
+          <pose>0 0 -0.375 0 0 0</pose>
           <geometry>
             <cylinder>
               <radius>0.0100000</radius>
-              <length>1.5</length>
+              <length>0.75</length>
             </cylinder>
           </geometry>
         </visual>
@@ -935,7 +935,6 @@
           <always_on>1</always_on>
         </sensor>
       </joint>
-
 
   <link name='camera_pilot'>
     <pose>-2.5 -4 1 0 -0.174533 0.523599</pose>
