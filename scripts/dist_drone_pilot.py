@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import rospy
+import time
 from gazebo_msgs.msg import LinkStates
 from std_msgs.msg import Float64
 
@@ -24,4 +25,5 @@ def listener():
         rate.sleep()
 
 if __name__ == '__main__':
+    time.sleep(2)
     listener()
