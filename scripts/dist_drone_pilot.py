@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 import rospy
 from gazebo_msgs.msg import LinkStates
 from std_msgs.msg import Float64
